@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Proyecto1_web.Models.Product>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <a asp-action="Create" style="color:black">Ingresar Producto</a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Descrition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year_in)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Utility)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Descrition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year_in)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utility)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { ID = item.Product_Id}) |
+                    @Html.ActionLink("Delete", "Delete", new { ID = item.Product_Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

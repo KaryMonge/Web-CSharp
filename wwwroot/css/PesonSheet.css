@@ -1,0 +1,52 @@
+﻿
+
+body {
+
+    background-color:dodgerblue;
+
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.head {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 4px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 9%;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.pic img {
+    border-radius: 40%;
+}
+    
+
+
+.container{
+
+ 
+}
+
+.h1{
+
+    font-size:20px;
+    font-family:'Franklin Gothic Medium';
+    color:midnightblue;
+}
+.p {
+    font-size: 10px;
+    font-family: 'Franklin Gothic Medium';
+    color: midnightblue;
+}

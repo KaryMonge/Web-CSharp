@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Proyecto1_web.Models.Tour>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .pic_contenedor {
+        border-radius: 40%;
+    }
+</style>
+
+
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" style="color:black">Ingresar Tour</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tour_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tour_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tour_Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Week_list)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour_Description)
+            </td>
+            <td>
+
+
+                    <img width="150px" height="150px" src=" @item.Tour_Image" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Week_list)
+
+            </td>
+            <td>
+                    @Html.ActionLink("Edit","Edit", new { Id = item.Tour_Id}) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = item.Tour_Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

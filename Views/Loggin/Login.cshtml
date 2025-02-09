@@ -1,0 +1,64 @@
+﻿
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="logginstyle.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+
+				<div class="card-header">
+
+					<h3>Sign In</h3>
+				</div>
+				<div class="card-body">
+					<form action="@Url.Action("Login","Loggin")" method="post">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="Cédula" class="form-control input_user" value="" placeholder="Usuario">
+						</div>
+
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="text" name="Password" class="form-control input_user" value="" placeholder="Contraseña">
+						</div>
+						
+						@ViewBag.Message
+						@if (ViewData["Mensaje"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        }
+
+
+						<div class="form-group">
+							<button type="submit" name="button" class="btn login_btn">Iniciar Sesion</button>
+						</div>
+					</form>
+
+				</div>
+				<div class="card-footer">
+					<div class="d-flex justify-content-center links">
+						No tienes una cuenta?...<a href="@Url.Action("Create_login","Loggin")">Crear Cuenta</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

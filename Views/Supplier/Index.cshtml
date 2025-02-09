@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Proyecto1_web.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <a asp-action="Create" style="color:black">Ingresar Proveedor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Legal_Doc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier_Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Legal_Doc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier_Description)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { ID = item.Legal_Doc}) |
+                    @Html.ActionLink("Delete", "Delete", new { ID = item.Legal_Doc})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

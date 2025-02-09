@@ -1,0 +1,45 @@
+﻿@model Proyecto1_web.Models.Tour
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>Tour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tour_Id" class="control-label">ID Tour</label>
+                <input asp-for="Tour_Id" class="form-control" />
+                <span asp-validation-for="Tour_Id" class="text-danger">ID Tour</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tour_Description" class="control-label">Descripción del tour</label>
+                <input asp-for="Tour_Description" class="form-control" />
+                <span asp-validation-for="Tour_Description" class="text-danger">Descripción del tour</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tour_Image" class="control-label">Imagen</label>
+                <input asp-for="Tour_Image" class="form-control" />
+                <span asp-validation-for="Tour_Image" class="text-danger">Imagen</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Week_list" class="control-label">Día</label>
+                <select asp-for="@Model.Week_list" class="form-select" asp-items="@(new SelectList(ViewBag.Week_list,"Week_list","Week_list"))"></select>
+                <span asp-validation-for="Week_list" class="text-danger">Día</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
